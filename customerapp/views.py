@@ -17,7 +17,7 @@ from .models import Customers
 ##        enc_value = encr['data']['ciphertext']
 ##        return enc_value
 ##    except Exception as e:
-##        print(f"Error encrypting data: {e}")
+##        print(e)
 ##        return value
 
 ##def decrypt_data(value):
@@ -30,7 +30,7 @@ from .models import Customers
 ##        decoded = base64.b64decode(dec_value).decode()
 ##        return decoded
 ##    except Exception as e:
-##        print(f"Error decrypting data: {e}")
+##        print(e)
 ##        return value
 
 
