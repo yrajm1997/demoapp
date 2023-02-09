@@ -1,0 +1,47 @@
+{% extends "customerapp/base.html" %}
+{% block head %}
+<style>
+    table, th, td {
+       border: 1px solid black;
+    }
+ </style>
+{% endblock %}
+{% block title %}Customers{% endblock %}
+{% block content %}
+<br>
+<h2 class="title">Application Data</h2>
+</style>
+<table>
+      <tr>
+        <th>Customer Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>PAN Number</th>
+        <th>Credit Card Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Salary</th>
+      </tr>
+      {% for record in records %}
+      <tr>
+        <td>{{ record.id }}</td>
+        <td>{{ record.first_name }}</td>
+        <td>{{ record.last_name }}</td>
+        <td>{{ record.date_of_birth }}</td>
+        <td>{{ record.pan_number }}</td>
+        <td>{{ record.credit_card_number }}</td>
+        <td>{{ record.email }}</td>
+        <td>{{ record.address }}</td>
+        <td>{{ record.salary }}</td>
+      </tr>
+      {% endfor %}
+
+</table>
+<br>
+<a href="{% url 'add' %}">Add Customer</a>
+<br><br>
+<a href="{% url 'dbview' %}">Database</a>
+<br><br>
+<a href="{% url 'homepage' %}">Home</a>
+{% endblock %}

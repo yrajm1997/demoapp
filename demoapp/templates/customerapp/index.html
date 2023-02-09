@@ -1,0 +1,11 @@
+{% extends "customerapp/base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<br>
+<h2 class="title">Home</h2>
+<a href="{% url 'records' %}">View Customers</a>
+<br><br>
+<a href="{% url 'add' %}">Add Customer</a>
+<br><br>
+<a href="{% url 'dbview' %}">Database</a>
+{% endblock %}

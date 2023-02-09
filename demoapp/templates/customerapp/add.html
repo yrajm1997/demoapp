@@ -1,0 +1,56 @@
+{% extends "customerapp/base.html" %}
+
+{% block content %}
+<p><br>
+  <h2 class="title">Add Customer</h2>
+  <form action="{% url 'records' %}" method="post">
+    {% csrf_token %}
+    <div class="field">
+      <label class="label">First Name:</label>
+        <input class="input" type="text" name="first_name" placeholder="First Name">
+    </div>
+    <br>
+    <div class="field">
+      <label class="label">Last Name:</label>
+        <input class="input" type="text" name="last_name" placeholder="Last Name">
+    </div>
+    <br>
+    <div class="field">
+      <label class="label">Date of Birth:</label>
+        <input class="input" type="text" name="date_of_birth" placeholder="YYYY-MM-DD" >
+    </div>
+    <br>
+    <div class="field">
+      <label class="label">PAN Number:</label>
+        <input class="input" type="text" name="pan_number" placeholder="PAN" >
+    </div>
+    <br>
+    <div class="field">
+      <label class="label">Credit Card Number:</label>
+        <input class="input" type="text" name="credit_card_number" placeholder="XXXX-XXXX-XXXX-XXXX" >
+    </div>
+    <br>
+    <div class="field">
+        <label class="label">Email:</label>
+          <input class="input" type="text" name="email" placeholder="Email" >
+    </div>
+    <br>
+    <div class="field">
+        <label class="label">Address:</label>
+          <input class="input" type="text" name="address" placeholder="Address" >
+    </div>
+    <br>
+    <div class="field">
+          <label class="label">Salary:</label>
+            <input class="input" type="text" name="salary" placeholder="Yearly Salary" >
+    </div>
+    <br>
+    <div class="field is-grouped">
+        <button class="button is-link">Submit</button>
+    </div>
+  </form>
+
+<br>
+<a href="{% url 'homepage' %}">Home</a>
+  
+{% endblock %}

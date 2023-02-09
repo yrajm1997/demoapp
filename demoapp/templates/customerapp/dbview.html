@@ -1,0 +1,56 @@
+{% extends "customerapp/base.html" %}
+{% block head %}
+<style>
+    table, th, td {
+       border: 1px solid black;
+    }
+ </style>
+{% endblock %}
+{% block title %}Database{% endblock %}
+{% block content %}
+<br>
+<h2 class="title">Raw Database Results</h2>
+</style>
+<section>
+  <div class="container" style="overflow-x:auto">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-parent">
+          <p><font color="#363942">SELECT * FROM `customerapp_customers`;</font></p>
+      </div>
+    </div>
+<table>
+      <tr>
+        <th>id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>date_of_birth</th>
+        <th>pan_number</th>
+        <th>credit_card_number</th>
+        <th>email</th>
+        <th>address</th>
+        <th>salary</th>
+      </tr>
+      {% for record in records %}
+      <tr>
+        <td>{{ record.id }}</td>
+        <td>{{ record.first_name }}</td>
+        <td>{{ record.last_name }}</td>
+        <td>{{ record.date_of_birth }}</td>
+        <td>{{ record.pan_number }}</td>
+        <td>{{ record.credit_card_number }}</td>
+        <td>{{ record.email }}</td>
+        <td>{{ record.address }}</td>
+        <td>{{ record.salary }}</td>
+      </tr>
+      {% endfor %}
+
+  </table>
+</div>
+</section>
+<br>
+<a href="{% url 'records' %}">View Customers</a>
+<br><br>
+<a href="{% url 'add' %}">Add Customer</a>
+<br><br>
+<a href="{% url 'homepage' %}">Home</a>
+{% endblock %}
